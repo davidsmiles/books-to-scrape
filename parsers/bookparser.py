@@ -1,7 +1,11 @@
 from locators.book_locators import BookLocators
 
 
-class Book:
+class BookParser:
+    """
+    A class to take in an HTML page (or part of it) and find properties of the an
+    item in it.
+    """
 
     RATINGS = {
         'One': 1,
@@ -43,5 +47,5 @@ class Book:
         star_rating_tags = self.parent.select_one(locator)
         classes = star_rating_tags.attrs['class']
         rating = [x for x in classes if 'star-rating' != x][0]
-        return Book.RATINGS[rating]
+        return BookParser.RATINGS[rating]
 

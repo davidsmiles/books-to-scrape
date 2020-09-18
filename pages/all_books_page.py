@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 from locators.all_books_page import AllBooksPageLocator
-from parsers.book import Book
+from parsers.bookparser import BookParser
 
 
 class AllBooksPage:
@@ -12,4 +12,4 @@ class AllBooksPage:
     def books(self):
         locator = AllBooksPageLocator.BOOKS
         books = self.soup.select(locator)
-        return [Book(each) for each in books]
+        return [BookParser(each) for each in books]
