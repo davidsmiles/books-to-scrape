@@ -19,7 +19,7 @@ class BookParser:
         self.parent = parent
 
     def __repr__(self):
-        return f'<{self.name} with price worth of {self.price} and rated {self.rating} of 5>'
+        return f'{self.name}, {self.price} ({self.rating})'
 
     @property
     def name(self):
